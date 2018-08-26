@@ -54,15 +54,21 @@ bool HelloWorld::init()
 	bg->setPosition(visibleSize.width/2, visibleSize.height/2);
 	this->addChild(bg);
 
-	auto start = MenuItemImage::create("Start.png", "Start.png", "Start.png", 
+	auto start = MenuItemImage::create("Start.png", 
+		"Start.png", 
+		"Start.png", 
 		CC_CALLBACK_1(HelloWorld::onStartCallBack, this));
 	start->setPosition(100, 260);
 
-	auto tutorial = MenuItemImage::create("Tutorial.png", "Tutorial.png", "Tutorial.png",
+	auto tutorial = MenuItemImage::create("Tutorial.png",
+		"Tutorial.png", 
+		"Tutorial.png",
 		CC_CALLBACK_1(HelloWorld::onTutorialCallBack, this));
 	tutorial->setPosition(100, 260-start->getContentSize().height);
 
-	auto about = MenuItemImage::create("About.png", "About.png", "About.png",
+	auto about = MenuItemImage::create("About.png", 
+		"About.png", 
+		"About.png",
 		CC_CALLBACK_1(HelloWorld::onAboutCallBack, this));
 	about->setPosition(100, 260-start->getContentSize().height-tutorial->getContentSize().height);
     

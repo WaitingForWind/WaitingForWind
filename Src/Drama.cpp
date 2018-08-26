@@ -7,6 +7,7 @@ Drama* Drama::create(char* filename)
 	{
 		auto edp = Director::getInstance()->getEventDispatcher();
 		auto listener = EventListenerTouchOneByOne::create();
+
 		listener->setSwallowTouches(true);
 		listener->onTouchBegan = CC_CALLBACK_2(Drama::onTouchBegan, d);
 		listener->onTouchEnded = CC_CALLBACK_2(Drama::onTouchEnded, d);
@@ -35,6 +36,7 @@ void Drama::onTouchMoved(Touch* pTouch, Event* pEvent)
 {
 	Size visibleSize = Director::getInstance()->getVisibleSize();
 	Vec2 pos = pTouch->getLocation();
+
 	if (is_touch)
 	{
 		MoveBy* move;

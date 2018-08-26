@@ -15,7 +15,7 @@ Scene* TutorialScene::createScene()
 
 bool TutorialScene::init()
 {
-	/* To do ÔÚÕâÀïÌí¼ÓÄãÏëÒªÌí¼ÓµÄ´úÂë*/
+	/* To do åœ¨è¿™é‡Œæ·»åŠ ä½ æƒ³è¦æ·»åŠ çš„ä»£ç */
 	if (!BasicScene::init())
 	{
 		return false;
@@ -23,16 +23,19 @@ bool TutorialScene::init()
 
 	Size visibleSize = Director::getInstance()->getVisibleSize();
 
+	// Initial objects
 	auto bg = Sprite::create("TutorialBG.png");
 	auto fan = Fan::create(Fan::NORTH);
 	auto hat = Hat::create(1);
 	auto actor = Actor::create(1);
 
+	// Set objects positions
 	bg->setPosition(visibleSize.width/2, visibleSize.height/2);
 	fan->setPosition(100,600);
 	hat->setPosition(100, 700);
 	actor->setPosition(100, 100);
 
+	// add them into 
 	this->addChild(bg);
 	myAddChild(fan, BasicScene::TYPE_FAN);
 	myAddChild(hat, BasicScene::TYPE_HAT);

@@ -1,3 +1,10 @@
+/* Waiting For Wind
+
+   ͳһ�������
+   1.��������ĸ��д
+   2.��������������ĸСд���������ÿ������������ĸ��д���磺 addChild(), runAction()�ȵ�
+   3.�����ȫСд�����ʼ����»��߷ָ�磺x_position, y_position�ȵȡ�*/
+
 #ifndef DRAMASCENE_H
 #define DRAMASCENE_H
 

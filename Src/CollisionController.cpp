@@ -4,6 +4,7 @@ CollisionController::~CollisionController(void)
 {
 	if (hat != nullptr)
 		delete hat;
+
 	if (actor != nullptr)
 		delete actor;
 }
@@ -19,24 +20,28 @@ void CollisionController::addHat(Hat* h)
 }
 
 /*
-	Actor´óĞ¡£º80 * 200
-	Hat´óĞ¡  £º100 * 50
-	¼ÙÉèÍ·²¿Ô¼Õ¼ÈËÉí¸ßµÄ1/4£¨¼´50ÏñËØ£©
-	¼ÙÉèÍ·µÄÉÏ°ë²¿·ÖÕ¼Í·µÄÒ»°ë£¨¼´25ÏñËØ£©
-	Åö×²³É¹¦£ºÃ±×ÓµÄÃªµã´¦ÔÚÍ·µÄÉÏ°ë²¿·Ö
-	X_ACTOR - 40 < X_HAT <¡¡X_ACTOR + 40
+	Actorå¤§å°ï¼š80 * 200
+	Hatå¤§å°  ï¼š100 * 50
+	å‡è®¾å¤´éƒ¨çº¦å äººèº«é«˜çš„1/4ï¼ˆå³50åƒç´ ï¼‰
+	å‡è®¾å¤´çš„ä¸ŠåŠéƒ¨åˆ†å å¤´çš„ä¸€åŠï¼ˆå³25åƒç´ ï¼‰
+	ç¢°æ’æˆåŠŸï¼šå¸½å­çš„é”šç‚¹å¤„åœ¨å¤´çš„ä¸ŠåŠéƒ¨åˆ†
+	X_ACTOR - 40 < X_HAT <ã€€X_ACTOR + 40
 	Y_ACTOR+ 75 < Y_HAT < Y_ACTOR + 100
 	*/
 bool CollisionController::isWin()
 {
-	/* To do ÔÚÕâÀïÌí¼ÓÄãÏëÒªÌí¼ÓµÄ´úÂë*/
+	/* To do åœ¨è¿™é‡Œæ·»åŠ ä½ æƒ³è¦æ·»åŠ çš„ä»£ç */
 	Point point_actor = actor->getPosition();
 	Point point_hat = hat->getPosition();
+
 	int x_actor = point_actor.x, y_actor = point_actor.y;
 	int x_hat = point_hat.x, y_hat = point_hat.y;
 	int deltax = x_hat - x_actor;
 	int deltay = y_hat - y_actor;
-	if (abs(deltax) <= 40 && deltay >= 75 && deltay <= 100) // include math.h in header file
+
+	if (abs(deltax) <= 40 && 
+		deltay >= 75 && 
+		deltay <= 100) // include math.h in header file
 	{
 		//hat->stopAllActions(); // should like that?
 		hat->getPhysicsBody()->setGravityEnable(false);
